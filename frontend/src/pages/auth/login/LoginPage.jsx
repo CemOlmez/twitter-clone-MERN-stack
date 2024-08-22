@@ -76,7 +76,7 @@ const LoginPage = () => {
 							onChange={handleInputChange}
 							value={formData.username}
 						/>
-					</label
+					</label>
 
 					<label className='input input-bordered rounded flex items-center gap-2'>
 						<MdPassword />
