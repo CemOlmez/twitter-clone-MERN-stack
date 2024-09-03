@@ -9,7 +9,7 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { toast } from "react-hot-toast";
 
 import LoadingSpinner from "./LoadingSpinner";
-import { formatPostDate } from "../../utils/date/index.js";
+import { formatPostDate } from "../../utils/date";
 
 const Post = ({ post }) => {
 	const [comment, setComment] = useState("");
@@ -60,10 +60,6 @@ const Post = ({ post }) => {
 			}
 		},
 		onSuccess: (updatedLikes) => {
-			// this is not the best UX, bc it will refetch all posts
-			// queryClient.invalidateQueries({ queryKey: ["posts"] });
-
-			// instead, update the cache directly for that post
 			queryClient.setQueryData(["posts"], (oldData) => {
 				return oldData.map((p) => {
 					if (p._id === post._id) {
@@ -172,6 +168,7 @@ const Post = ({ post }) => {
 									{post.comments.length}
 								</span>
 							</div>
+							
 							<dialog id={`comments_modal${post._id}`} className='modal border-none outline-none'>
 								<div className='modal-box rounded border border-gray-600'>
 									<h3 className='font-bold text-lg mb-4'>COMMENTS</h3>
