@@ -15,7 +15,7 @@ import { useQuery } from "@tanstack/react-query";
 import { formatMemberSinceDate } from "../../utils/date";
 
 import useFollow from "../../hooks/useFollow";
-
+import useUpdateUserProfile from "../../hooks/useUpdateUserProfile";
 
 const ProfilePage = () => {
 	const [coverImg, setCoverImg] = useState(null);
@@ -30,7 +30,12 @@ const ProfilePage = () => {
 	const { follow, isPending } = useFollow();
 	const { data: authUser } = useQuery({ queryKey: ["authUser"] });
 
-	const {data: user, isLoading, refetch, isRefetching, } = useQuery({
+	const {
+		data: user,
+		isLoading,
+		refetch,
+		isRefetching,
+	} = useQuery({
 		queryKey: ["userProfile"],
 		queryFn: async () => {
 			try {
@@ -45,6 +50,8 @@ const ProfilePage = () => {
 			}
 		},
 	});
+
+	const { isUpdatingProfile, updateProfile } = useUpdateUserProfile();
 
 	const isMyProfile = authUser._id === user?._id;
 	const memberSinceDate = formatMemberSinceDate(user?.createdAt);
@@ -84,7 +91,7 @@ const ProfilePage = () => {
 									<span className='text-sm text-slate-500'>{POSTS?.length} posts</span>
 								</div>
 							</div>
-							
+							{/* COVER IMG */}
 							<div className='relative group/cover'>
 								<img
 									src={coverImg || user?.coverImg || "/cover.png"}
@@ -114,7 +121,7 @@ const ProfilePage = () => {
 									ref={profileImgRef}
 									onChange={(e) => handleImgChange(e, "profileImg")}
 								/>
-								
+								{/* USER AVATAR */}
 								<div className='avatar absolute -bottom-16 left-4'>
 									<div className='w-32 rounded-full relative group/avatar'>
 										<img src={profileImg || user?.profileImg || "/avatar-placeholder.png"} />
