@@ -101,6 +101,13 @@ const LoginPage = () => {
 					</Link>
 				</div>
 			</div>
+{/* Demo login credentials */}
+<div className='absolute top-[27.5rem] right-[30rem] transform -translate-y-1/2 bg-gray-800 p-4 rounded-lg shadow-lg text-white'>
+	<h2 className='text-lg text-center font-semibold'>Login Demo</h2>
+	<p>Username: cemolmez</p>
+	<p>Password: 123456</p>
+</div>
+
 		</div>
 	);
 };
