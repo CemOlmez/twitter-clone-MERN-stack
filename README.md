@@ -37,14 +37,14 @@ Developed a social media platform clone using MongoDB, Express.js, React, Tailwi
 ### Links
 
 - Github repo URL: [Repositroy](https://github.com/CemOlmez/MERN-twitter-clone-)
-- Live Site URL: [DEMO](https://mern-twitter-clone-gbl2.onrender.com/login)
+- Live DEMO URL: [DEMO](https://mern-twitter-clone-gbl2.onrender.com/login)
 
 
 ### Screenshots
 
 ![Screenshot of X login](https://i.imgur.com/uYXgMwL.png)
 
-![Screenshot of X home](https://i.imgur.com/2cqQuI9.png) https://imgur.com/2cqQuI9
+![Screenshot of X home](https://i.imgur.com/2cqQuI9.png)
 
 
 
@@ -59,5 +59,5 @@ Developed a social media platform clone using MongoDB, Express.js, React, Tailwi
 
 ## Author/
 
-Developed by Cem Ölmez, based on[asaprogrammer's tutorial on YouTube.](https://www.youtube.com/@asaprogrammer_)
-Tutorial Reference: [MERN Stack Project Video](https://www.youtube.com/watch?v=4GUVz2psWUg)
+- Developed by Cem Ölmez, based on[asaprogrammer's tutorial on YouTube.](https://www.youtube.com/@asaprogrammer_)
+- Tutorial Reference: [MERN Stack Project Video](https://www.youtube.com/watch?v=4GUVz2psWUg)
